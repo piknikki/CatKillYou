@@ -12,8 +12,6 @@ list_of_questions = {
     "Please give your cat a once-over to estimate their Spooky MurderRageSauce. Be fair. ": ["Scale of 1 to 10"]
 }
 
-murder_sauce = 0  # global variable
-
 def display_starting_message():  # opening message
     """
     print a beginning message
@@ -39,6 +37,8 @@ def check_murder_sauce(question, response):
         murder_sauce += 10
     else:
         print("You didn't answer correctly. Follow directions plz.")
+    
+    return None
 
 def murder_sauce_result(murder_sauce):
     """
@@ -73,7 +73,8 @@ def play():
         pick_one = input("pick one: ")
         check_murder_sauce(question, pick_one)
 
-    print(murder_sauce_result(murder_sauce))
+    murder_sauce_result(murder_sauce)
 
 if __name__ == '__main__':
+    murder_sauce = 0  # global variable
     play()
